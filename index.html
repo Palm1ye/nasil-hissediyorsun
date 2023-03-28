@@ -5,13 +5,57 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Hoş geldin!</title>
   </head>
-
+<!--Müzik bölümü-->
   <body>
     <audio autoplay loop>
         <source src="https://docs.google.com/uc?export=open&id=1o8XooqXIhA2bVrPG81mT2MKQV04APu9J" type="audio/mpeg">
         Tarayıcınız müzik çalmasını desteklemiyor.
       </audio>
-    
+
+<!--Preloader Mesajı-->
+      <div class="wrapper">
+        <div class="card">
+          <h1 id="welcome">Hoş Geldin!</h1>
+          <h2 id="creating">Güzel bir deneyim için siteyi hazırlıyoruz.</h2>
+          <h2 id="almost">Neredeyse bitti.</h2>
+        </div>
+        <div class="preloader">
+          <div class="spinner"></div>
+        </div>
+      </div>
+      
+      <!--Preloader Animasyonu-->
+<script>
+const welcome = document.getElementById('welcome');
+const creating = document.getElementById('creating');
+const almost = document.getElementById('almost');
+const card = document.querySelector('.card');
+const preloader = document.querySelector('.preloader');
+
+setTimeout(() => {
+  welcome.classList.add('active');
+}, 0);
+
+setTimeout(() => {
+  welcome.classList.remove('active');
+  creating.classList.add('active');
+}, 5000);
+
+setTimeout(() => {
+  creating.classList.remove('active');
+  almost.classList.add('active');
+}, 10000);
+
+setTimeout(() => {
+  almost.classList.remove('active');
+  card.style.display = 'none';
+  preloader.style.display = 'block';
+}, 15000);
+
+setTimeout(() => {
+  preloader.style.display = 'none';
+}, 15000);
+</script>
 
     <div class="container">
       <h1>Nasılsın?</h1>
