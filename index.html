@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Hoş geldin!</title>
+  </head>
+
+  <body>
+    <audio autoplay loop>
+        <source src="https://docs.google.com/uc?export=open&id=1o8XooqXIhA2bVrPG81mT2MKQV04APu9J" type="audio/mpeg">
+        Tarayıcınız müzik çalmasını desteklemiyor.
+      </audio>
+    
+
+    <div class="container">
+      <h1>Nasılsın?</h1>
+      <form>
+        <label for="name">İsmin?</label>
+        <h4>(Paylaşmak istemiyorsan boş bırakabilir ya da rastgele bir şey yazabilirsin)</h4>
+        <input type="text" id="name" name="name">
+        <label for="emotion">Nasıl hissediyorsun?</label>
+        <select id="emotion" name="emotion">
+          <option value="Mutlu">Mutlu</option>
+          <option value="Üzgün">Üzgün</option>
+          <option value="Öfkeli">Öfkeli</option>
+          <option value="Kaygılı">Kaygılı</option>
+          <option value="Heyecanlı">Heyecanlı</option>
+        </select>
+        <label for="details">Neden?</label>
+        <textarea id="details" name="details"></textarea>
+        <button type="submit">Paylaş</button>
+      </form>
+      <input type="checkbox" id="music-toggle">
+      <label for="music-toggle">Müziği durdur</label>
+      <h2>Başkalarının paylaştığı duygular</h2>
+      <ul id="emotions">
+        <!-- Başkalarının paylaştığı duygular burada görünecek -->
+      </ul>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        const music = document.querySelector('audio');
+        const toggle = document.querySelector('#music-toggle');
+  
+        toggle.addEventListener('change', function() {
+          if (toggle.checked) {
+            music.pause();
+          } else {
+            music.play();
+          }
+        });
+      </script>
+
+  </body>
+</html>
