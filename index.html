@@ -30,8 +30,11 @@
         <textarea id="details" name="details"></textarea>
         <button type="submit">Paylaş</button>
       </form>
-      <input type="checkbox" id="music-toggle">
-      <label for="music-toggle">Müziği durdur</label>
+      <div class="music-container">
+        <button id="music-toggler">
+          Müziği duraklat
+        </button>
+      </div>
       <h2>Başkalarının paylaştığı duygular</h2>
       <ul id="emotions">
         <!-- Başkalarının paylaştığı duygular burada görünecek -->
@@ -40,15 +43,17 @@
     <script src="script.js"></script>
     <script>
         const music = document.querySelector('audio');
-        const toggle = document.querySelector('#music-toggle');
-  
-        toggle.addEventListener('change', function() {
-          if (toggle.checked) {
-            music.pause();
-          } else {
+        
+        document.querySelector('#music-toggler').addEventListener('click', (event) => {
+          if(music.paused) {
             music.play();
+            event.target.innerText = 'Müziği duraklat';
+            return;
           }
-        });
+
+          music.pause();
+          event.target.innerText = 'Müziği başlat';
+        })
       </script>
 
   </body>

@@ -25,7 +25,6 @@ ul {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
 }
 
-
 h4 {
     font-size: 0.2em;
     opacity: 0.5;
@@ -125,24 +124,19 @@ form button:hover {
     opacity: 0.8;
 }
 
-input[type="checkbox"] {
-    display: none;
-}
-
-label[for="music-toggle"] {
-    position: relative;
+.music-container {
     margin-top: 20px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#music-toggler {
     padding: 7px;
     background-color: #7f07c9;
     border-radius: 10px;
+    border: none;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-}
-
-input[type="checkbox"]:checked+label[for="music-toggle"] {
-    background-color: rgba(255, 0, 0, 0.361);
-    color: #fff;
+    color: white;
 }
