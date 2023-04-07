@@ -21,7 +21,7 @@ form.addEventListener('submit', (e) => {
     const emotionMeta = document.createElement('div');
     const emotionTime = document.createElement('span');
 
-    emotionDetails.textContent = name + ': ' + details;
+    emotionDetails.textContent = name + ": " + details;
 
     if (name) {
         const emotionName = document.createElement('span');

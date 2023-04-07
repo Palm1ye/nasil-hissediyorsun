@@ -130,10 +130,14 @@ input[type="checkbox"] {
 }
 
 label[for="music-toggle"] {
-    display: inline-block;
-    padding: 10px;
-    background-color: #a803fa;
-    border-radius: 5px;
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    background-color: #7f07c9;
+    border-radius: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     cursor: pointer;
 }
