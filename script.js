@@ -21,17 +21,19 @@ form.addEventListener('submit', (e) => {
     const emotionMeta = document.createElement('div');
     const emotionTime = document.createElement('span');
 
-    emotionDetails.textContent = emotion + ': ' + details;
+    emotionDetails.textContent = name + ': ' + details;
+
+    if (name) {
+        const emotionName = document.createElement('span');
+        emotionName.textContent = 'Duygu ' + ': ' + emotion;
+        emotionMeta.appendChild(emotionName);
+    }
+
+
 
     emotionTime.textContent = new Date().toLocaleString();
 
     emotionMeta.appendChild(emotionTime);
-
-    if (name) {
-        const emotionName = document.createElement('span');
-        emotionName.textContent = 'Gönderen ' + name;
-        emotionMeta.appendChild(emotionName);
-    }
 
     emotionItem.appendChild(emotionDetails);
     emotionItem.appendChild(emotionMeta);
