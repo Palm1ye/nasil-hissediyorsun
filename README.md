@@ -1,10 +1,10 @@
 
-# Nasıl Hissediyorsun?   [Demo](https://palm1ye.github.io/nasil-hissediyorsun/)
+# Nasıl Hissediyorsun?   [Demo](https://nasil-hissediyorsun.hop.sh)
 Kullanıcıların duygu durumlarını paylaşabildiği, kullanıcı bilgisi toplamayan bir websitesi. Görsel bir şölen sunmasa bile benim için yapması keyifli ve eğlenceliydi. 
 
 ## Mesajlar nerede saklanıyor?
 
-Mesajları bir database'de saklamak istedim ancak başaramadım. O yüzden kısa süreliğine tarayıcınızın hafızasında yer ediyor ve sayfa yenilendikten sonra yazdıklarınız gidiyor. 
+Mesajlarınız MongoDB database'inde saklanıyor. Herhangi bir şifreleme yöntemi yok, direkt alınan veri karşı sunucuya kaydedildikten sonra döngüyle tekrar sitede listeleniyor. 
 
   
 ## Teşekkürler
