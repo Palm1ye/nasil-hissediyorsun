@@ -1,5 +1,6 @@
 html,
 body {
+    overflow: auto;
     width: 100%;
     height: 100%;
     margin: 0;
@@ -36,6 +37,7 @@ h1 {
 }
 
 .container {
+    overflow: auto;
     max-width: 800px;
     margin: 0 auto;
     padding: 1rem;
@@ -43,6 +45,7 @@ h1 {
 }
 
 .container>ul>li>div {
+    overflow: auto;
     display: flex;
     flex-direction: column;
     gap: 0.5vh;
@@ -92,6 +95,7 @@ form button:hover {
 }
 
 .emotions-list {
+    overflow: auto;
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

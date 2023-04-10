@@ -70,4 +70,28 @@ app.get('/emotions', async (req, res) => {
 });
 
 
+
+app.get('/list-emotions/:page', async (req, res) => {
+    const perPage = 15;
+    const page = req.params.page || 1;
+
+    try {
+        const emotions = await Emotion.find()
+            .skip((perPage * page) - perPage)
+            .limit(perPage)
+            .exec();
+
+        const count = await Emotion.countDocuments().exec();
+
+        res.json({
+            emotions: emotions,
+            currentPage: page,
+            pages: Math.ceil(count / perPage)
+        });
+    } catch (ex) {
+        res.status(500).send('Bir şeyler yolunda değil.');
+    }
+});
+
+
 app.listen(process.env.PORT || 3000, () => console.log('Server started on port 3000...'));
