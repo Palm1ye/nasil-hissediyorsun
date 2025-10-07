@@ -1,0 +1,142 @@
+html,
+body {
+    margin: 0;
+    background: #1a1a2e; /* Dark blue background */
+    color: #e0e0e0; /* Light gray text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 15px;
+    animation: fadeIn 0.5s ease-in-out; /* Added animation */
+}
+
+h4 {
+    font-size: 0.8em;
+    font-weight: 400;
+    opacity: 0.6;
+    margin: -0.5rem 0 1rem 0;
+}
+
+h1 {
+    text-align: center;
+    margin: 1rem 0 2rem 0;
+    font-weight: 700;
+    color: #fff;
+}
+
+.container {
+    max-width: 600px;
+    width: 90%;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: transparent;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    animation: fadeIn 0.5s ease-in-out; /* Added animation */
+}
+
+form label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+form input,
+form textarea,
+form select {
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+form button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    background-color: #00a8ff;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 168, 255, 0.2);
+    background-color: #0095e0;
+}
+
+.music-container {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#music-toggler {
+    padding: 0.6rem 1.2rem;
+    background-color: #e94560;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 10px rgba(233, 69, 96, 0.3);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#music-toggler:hover {
+    background-color: #d43d51;
+    box-shadow: 0 0 15px rgba(233, 69, 96, 0.5);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

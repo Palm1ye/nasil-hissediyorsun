@@ -1,7 +1,8 @@
-import express from 'npm:express';
-import mongoose from 'npm:mongoose';
-import bodyParser from 'npm:body-parser';
+import express from 'express';
+import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
 import * as dotenv from 'dotenv';
+import * as path from 'path';
 dotenv.config();
 
 
@@ -26,17 +27,7 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.get('/script.js', (req, res) => {
-    res.sendFile(__dirname + '/script.js');
-});
-
-app.get('/style.css', (req, res) => {
-    res.sendFile(__dirname + '/style.css');
-});
-
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
-});
+app.use(express.static(path.join(__dirname, '../public')));
 
 app.post('/emotions', async (req, res) => {
     const { name, emotion, details } = req.body;
