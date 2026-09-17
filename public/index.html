@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Hoş geldin!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   </head>
 <!--Müzik bölümü-->
   <body>
@@ -14,10 +17,10 @@
     <div class="container">
       <h1>Nasılsın?</h1>
       <form>
-        <label for="name">İsmin?</label>
-        <h4>(Paylaşmak istemiyorsan boş bırakabilir ya da rastgele bir şey yazabilirsin)</h4>
+        <label for="name">Adın?</label>
+        <h4>(İsteğe bağlı)</h4>
         <input type="text" id="name" name="name">
-        <label for="emotion">Nasıl hissediyorsun?</label>
+        <label for="emotion">Bugün nasıl hissediyorsun?</label>
         <select id="emotion" name="emotion">
           <option value="Mutlu">Mutlu</option>
           <option value="Üzgün">Üzgün</option>
@@ -25,20 +28,21 @@
           <option value="Kaygılı">Kaygılı</option>
           <option value="Heyecanlı">Heyecanlı</option>
         </select>
-        <label for="details">Neden?</label>
+        <label for="details">Neden böyle hissediyorsun?</label>
         <textarea id="details" name="details"></textarea>
-        <button type="submit">Paylaş</button>
+        <button type="submit">Gönder</button>
       </form>
       <div class="music-container">
         <button id="music-toggler">
-          Müziği duraklat
+          Müziği Durdur
         </button>
       </div>
-      <h2>Başkalarının paylaştığı duygular</h2>
+      <h2>Diğerlerinin hissettikleri</h2>
       <ul id="emotions">
         <!-- Başkalarının paylaştığı duygular burada görünecek -->
       </ul>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.4.3/purify.min.js" integrity="sha512-aV+loL/X8C+ImtcnZgoBD3DizB/H0rG2g/f8qDaxJWn+kQ8h3a3629f17+mdqAc2K/z1/f44Y+fD/OmQN+i6g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>
     <script>
         const music = document.querySelector('audio');
@@ -46,12 +50,12 @@
         document.querySelector('#music-toggler').addEventListener('click', (event) => {
           if(music.paused) {
             music.play();
-            event.target.innerText = 'Müziği duraklat';
+            event.target.innerText = 'Müziği Durdur';
             return;
           }
 
           music.pause();
-          event.target.innerText = 'Müziği başlat';
+          event.target.innerText = 'Müziği Başlat';
         })
       </script>
 
