@@ -23,17 +23,21 @@ form.addEventListener('submit', (e) => {
         timestamp: new Date().getTime()
     };
 
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', '/emotions', true);
-    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
+    fetch('/emotions', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json;charset=UTF-8'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (response.ok) {
             const emotionItem = document.createElement('li');
             const emotionDetails = document.createElement('p');
             const emotionMeta = document.createElement('div');
             const emotionTime = document.createElement('span');
 
-            emotionDetails.textContent = data.name + ': ' + data.details;
+            emotionDetails.innerHTML = DOMPurify.sanitize(data.name) + ': ' + DOMPurify.sanitize(data.details);
 
             if (data.name) {
                 const emotionName = document.createElement('span');
@@ -50,8 +54,8 @@ form.addEventListener('submit', (e) => {
             emotionInput.value = '';
             detailsInput.value = '';
         }
-    };
-    xhr.send(JSON.stringify(data));
+    })
+    .catch(error => console.error('Error:', error));
 });
 
 window.onload = async () => {
@@ -62,7 +66,7 @@ window.onload = async () => {
         const emotionMeta = document.createElement('div');
         const emotionTime = document.createElement('span');
 
-        emotionDetails.textContent = item.name + ': ' + item.details;
+        emotionDetails.innerHTML = DOMPurify.sanitize(item.name) + ': ' + DOMPurify.sanitize(item.details);
 
         if (item.name) {
             const emotionName = document.createElement('span');
