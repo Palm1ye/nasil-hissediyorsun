@@ -1,7 +1,9 @@
-const express = import('express');
-const mongoose = import('mongoose');
-const bodyParser = import('body-parser');
-import('dotenv').config();
+import express from 'npm:express';
+import mongoose from 'npm:mongoose';
+import bodyParser from 'npm:body-parser';
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 
 const app = express();
 
