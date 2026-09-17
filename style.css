@@ -1,0 +1,138 @@
+html,
+body {
+    margin: 0;
+    background: #270F34;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    contain: content;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+h4 {
+    font-size: 0.2em;
+    opacity: 0.5;
+}
+
+h1 {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: transparent;
+}
+
+.container>ul>li>div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+form label {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+form input,
+form textarea {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    color: #fff;
+}
+
+form button {
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.emotions-list {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.emotion-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+.emotion-card__details {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.emotion-card__meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+}
+
+.emotion-card__time {
+    opacity: 0.5;
+}
+
+.emotion-card__name {
+    opacity: 0.8;
+}
+
+.music-container {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#music-toggler {
+    padding: 7px;
+    background-color: #7f07c9;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    color: white;
+}
